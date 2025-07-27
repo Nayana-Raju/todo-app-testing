@@ -1,0 +1,259 @@
+================================================================================
+TODO APPLICATION - SIMPLIFIED SELENIUM TEST SUITE
+================================================================================
+Make sure your React app is running on http://localhost:3000
+================================================================================
+Starting in 5 seconds...
+Starting in 4 seconds...
+Starting in 3 seconds...
+Starting in 2 seconds...
+Starting in 1 seconds...
+
+🚀 AUTOMATION STARTED!
+================================================================================
+INITIALIZING TODO APPLICATION TEST SUITE
+================================================================================
+
+DevTools listening on ws://127.0.0.1:63333/devtools/browser/82b1d04a-0a9a-478a-bd65-e6c0b743ea18
+[8284:27608:0727/230615.216:ERROR:ui\gl\direct_composition_support.cc:615] AMD VideoProcessorGetOutputExtension failed: Unspecified error (0x80004005)
+Chrome driver initialized. Base URL: http://localhost:3000
+test_01_login_and_access_todo_list (__main__.TodoAppTestSuite)
+Step 1: Test successful login and access todo list
+--- SETTING UP: test_01_login_and_access_todo_list ---
+ ...
+🔐 STEP 1: Testing login and accessing todo list
+  Attempting login with username: testuser
+  Waiting for element: css selector=[data-testid='username-input']
+  Waiting for element: css selector=[data-testid='password-input']
+  Waiting for element: css selector=[data-testid='submit-button']
+  Entering credentials...
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1753643178.590470   23700 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+  Clicking login button...
+[23932:24624:0727/230620.138:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+[23932:24624:0727/230620.140:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+  Checking for password change dialog...
+  Waiting for element: xpath=//button[contains(text(),'OK')]
+  No password change dialog found
+  Looking for View List button...
+  Waiting for clickable element: xpath=//button[contains(text(),'View List')]
+  ✅ Found View List button, clicking...
+Created TensorFlow Lite XNNPACK delegate for CPU.
+Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+  Waiting for todo list to load...
+  Waiting for element: class name=todo-list-container
+  ✅ Todo interface loaded (found todo-list-container)
+  ✅ Logout button found - login successful
+  ✅ STEP 1 COMPLETED: Login and todo list access
+--- COMPLETED: test_01_login_and_access_todo_list ---ok
+
+test_02_create_todo_item (__main__.TodoAppTestSuite)
+Step 2: Test creating a new todo item ...
+--- SETTING UP: test_02_create_todo_item ---
+
+➕ STEP 2: Testing todo creation
+  Attempting login with username: testuser
+  Waiting for element: css selector=[data-testid='username-input']
+  Waiting for element: css selector=[data-testid='password-input']
+  Waiting for element: css selector=[data-testid='submit-button']
+  Entering credentials...
+  Clicking login button...
+  Checking for password change dialog...
+  Waiting for element: xpath=//button[contains(text(),'OK')]
+[23932:24624:0727/230644.049:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+  No password change dialog found
+  Looking for View List button...
+  Waiting for clickable element: xpath=//button[contains(text(),'View List')]
+  ✅ Found View List button, clicking...
+  Waiting for todo list to load...
+  Waiting for element: class name=todo-list-container
+  ✅ Todo interface loaded (found todo-list-container)
+  Initial todo count: 5
+  Waiting for element: id=todo-title
+  Waiting for element: class name=add-btn
+  Creating todo: 'Automated Test Todo'
+  Typing: Todo Title = 'Automated Test Todo'
+  Typing: Todo Description = 'Created by automation script'
+  Clicking: Add Button
+  Updated todo count: 6
+  ✅ Todo created successfully
+  ✅ Todo content verified: Automated Test Todo
+  ✅ STEP 2 COMPLETED: Todo creation
+--- COMPLETED: test_02_create_todo_item ---ok
+
+--- SETTING UP: test_03_update_todo_item ---
+
+test_03_update_todo_item (__main__.TodoAppTestSuite)
+Step 3: Test updating an existing todo item ...
+✏️ STEP 3: Testing todo update
+  Attempting login with username: testuser
+  Waiting for element: css selector=[data-testid='username-input']
+  Waiting for element: css selector=[data-testid='password-input']
+  Waiting for element: css selector=[data-testid='submit-button']
+  Entering credentials...
+  Clicking login button...
+  Checking for password change dialog...
+  Waiting for element: xpath=//button[contains(text(),'OK')]
+  No password change dialog found
+  Looking for View List button...
+  Waiting for clickable element: xpath=//button[contains(text(),'View List')]
+  ✅ Found View List button, clicking...
+  Waiting for todo list to load...
+  Waiting for element: class name=todo-list-container
+  ✅ Todo interface loaded (found todo-list-container)
+  Waiting for element: id=todo-title
+  Waiting for element: class name=add-btn
+  Creating todo to update: 'Todo to Update'
+  Typing: text = 'Todo to Update'
+  Clicking: element
+  Looking for edit button...
+  Clicking: Edit Button
+  Updating title to: 'Updated Todo Title'
+  Typing: text = 'Updated Todo Title'
+  Clicking: Save Button
+  ✅ Todo updated successfully
+  ✅ STEP 3 COMPLETED: Todo update
+--- COMPLETED: test_03_update_todo_item ---ok
+
+--- SETTING UP: test_04_delete_todo_item ---
+
+test_04_delete_todo_item (__main__.TodoAppTestSuite)
+Step 4: Test deleting a todo item ...
+🗑️ STEP 4: Testing todo deletion
+  Attempting login with username: testuser
+  Waiting for element: css selector=[data-testid='username-input']
+  Waiting for element: css selector=[data-testid='password-input']
+  Waiting for element: css selector=[data-testid='submit-button']
+  Entering credentials...
+  Clicking login button...
+[23932:24624:0727/230736.780:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+  Checking for password change dialog...
+  Waiting for element: xpath=//button[contains(text(),'OK')]
+  No password change dialog found
+  Looking for View List button...
+  Waiting for clickable element: xpath=//button[contains(text(),'View List')]
+  ✅ Found View List button, clicking...
+  Waiting for todo list to load...
+  Waiting for element: class name=todo-list-container
+  ✅ Todo interface loaded (found todo-list-container)
+  Waiting for element: id=todo-title
+  Waiting for element: class name=add-btn
+  Creating todo to delete: 'Todo to Delete'
+  Typing: text = 'Todo to Delete'
+  Clicking: element
+  Todo count before deletion: 8
+  Found delete button with selector: delete-btn
+  Clicking: Delete Button
+  Waiting for element: class name=confirm-btn
+  Clicking: Confirm Delete
+  ❌ Error during deletion: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=138.0.7204.169); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+        GetHandleVerifier [0x0xf91af3+62339]
+        GetHandleVerifier [0x0xf91b34+62404]
+        (No symbol) [0x0xdd2123]
+        (No symbol) [0x0xdd88d9]
+        (No symbol) [0x0xddae93]
+        (No symbol) [0x0xe61794]
+        (No symbol) [0x0xe3f3bc]
+        (No symbol) [0x0xe607a3]
+        (No symbol) [0x0xe3f1b6]
+        (No symbol) [0x0xe0e7a2]
+        (No symbol) [0x0xe0f644]
+        GetHandleVerifier [0x0x1206683+2637587]
+        GetHandleVerifier [0x0x1201a8a+2618138]
+        GetHandleVerifier [0x0xfb856a+220666]
+        GetHandleVerifier [0x0xfa8998+156200]
+        GetHandleVerifier [0x0xfaf12d+182717]
+        GetHandleVerifier [0x0xf99a38+94920]
+        GetHandleVerifier [0x0xf99bc2+95314]
+        GetHandleVerifier [0x0xf84d0a+9626]
+        BaseThreadInitThunk [0x0x76177ba9+25]
+        RtlInitializeExceptionChain [0x0x7756c3ab+107]
+        RtlClearBits [0x0x7756c32f+191]
+
+  ✅ STEP 4 COMPLETED: Todo deletion
+--- COMPLETED: test_04_delete_todo_item ---ok
+
+--- SETTING UP: test_05_toggle_todo_completion ---
+
+test_05_toggle_todo_completion (__main__.TodoAppTestSuite)
+Step 5: Test toggling todo completion status ...
+☑️ STEP 5: Testing todo completion toggle
+  Attempting login with username: testuser
+  Waiting for element: css selector=[data-testid='username-input']
+  Waiting for element: css selector=[data-testid='password-input']
+  Waiting for element: css selector=[data-testid='submit-button']
+  Entering credentials...
+  Clicking login button...
+  Checking for password change dialog...
+  Waiting for element: xpath=//button[contains(text(),'OK')]
+  No password change dialog found
+  Looking for View List button...
+  Waiting for clickable element: xpath=//button[contains(text(),'View List')]
+  ✅ Found View List button, clicking...
+  Waiting for todo list to load...
+  Waiting for element: class name=todo-list-container
+  ✅ Todo interface loaded (found todo-list-container)
+  Waiting for element: id=todo-title
+  Waiting for element: class name=add-btn
+  Creating todo to toggle: 'Todo to Toggle'
+  Initial todo classes: todo-item
+  Found checkbox with selector: todo-checkbox
+  Clicking: Toggle Checkbox
+  Updated todo classes: todo-item completed
+  ✅ Todo marked as completed
+  Clicking: Toggle Back
+  Final todo classes: todo-item
+  ✅ Todo toggled back to incomplete
+  ✅ STEP 5 COMPLETED: Todo completion toggle
+--- COMPLETED: test_05_toggle_todo_completion ---ok
+
+--- SETTING UP: test_06_login_with_invalid_credentials ---
+
+test_06_login_with_invalid_credentials (__main__.TodoAppTestSuite)
+Step 6: Test login with invalid credentials ...
+❌ STEP 6: Testing invalid login
+  Attempting login with invalid credentials: invaliduser/wrongpassword
+  Waiting for element: css selector=[data-testid='username-input']
+  Waiting for element: css selector=[data-testid='password-input']
+  Waiting for element: css selector=[data-testid='submit-button']
+  Waiting for element: css selector=[data-testid='error-message']
+  ✅ Error message displayed: 'Authentication failed'
+  ✅ Not redirected to todo page - invalid login properly handled
+  ✅ STEP 6 COMPLETED: Invalid login test
+--- COMPLETED: test_06_login_with_invalid_credentials ---ok
+================================================================================
+TEST SUITE COMPLETED - Browser will remain open for inspection
+================================================================================
+
+================================================================================
+📊 TEST EXECUTION SUMMARY
+================================================================================
+✅ Tests run: 6
+❌ Failures: 0
+💥 Errors: 0
+📈 Success rate: 100.0%
+
+📋 EXECUTION FLOW COMPLETED:
+1. ✅ Login with valid credentials + View List
+2. ✅ Create new todo item
+3. ✅ Update existing todo item
+4. ✅ Delete todo item
+5. ✅ Toggle todo completion status
+6. ✅ Test invalid login credentials
+
+================================================================================
+🔍 Browser remains open for manual inspection
+================================================================================
+
+🎉 ALL TESTS COMPLETED SUCCESSFULLY!
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 161.669s
+
+OK
+Press any key to continue . . . WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1753643355.082596   31736 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+[23932:24624:0727/230936.311:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT

@@ -1,0 +1,411 @@
+[2025-07-27 23:11:19.438] Starting API automation test sequence
+[2025-07-27 23:11:19.438] ==================================================
+[2025-07-27 23:11:19.438] Attempting login with username: testuser
+[2025-07-27 23:11:19.476] LOGIN - Status Code: 200
+[2025-07-27 23:11:19.478] Response Body: {
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0dXNlciIsImlhdCI6MTc1MzY0MzQ3OSwiZXhwIjoxNzUzNzI5ODc5fQ.UEw05dSpnGvGlg__W-8JlrjMz7L6Qxscfe4Pfx7OGMk",
+  "user": {
+    "id": 1,
+    "username": "testuser",
+    "email": "test@example.com"
+  }
+}
+[2025-07-27 23:11:19.478] Response Time: 0.018 seconds
+[2025-07-27 23:11:19.478] Successfully obtained authentication token
+[2025-07-27 23:11:19.478] Login total time: 0.040 seconds
+[2025-07-27 23:11:19.479]
+Step 1: Fetch initial todo items
+[2025-07-27 23:11:19.479] Fetching all todo items (get_initial_todos)...
+[2025-07-27 23:11:19.495] GET TODOS (get_initial_todos) - Status Code: 200
+[2025-07-27 23:11:19.498] Response Body: [
+  {
+    "id": 1,
+    "userId": 1,
+    "title": "Sample Todo",
+    "description": "This is a sample todo",
+    "completed": false,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "title": "Another Todo",
+    "description": "Another sample todo",
+    "completed": true,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T18:58:14.611Z"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:02:40.618Z"
+  },
+  {
+    "id": 7,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:03:39.612Z"
+  },
+  {
+    "id": 8,
+    "userId": 1,
+    "title": "Automated Test Todo",
+    "description": "Created by automation script",
+    "completed": false,
+    "createdAt": "2025-07-27T19:06:56.347Z"
+  },
+  {
+    "id": 9,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:07:21.727Z"
+  },
+  {
+    "id": 11,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:08:20.170Z"
+  }
+]
+[2025-07-27 23:11:19.499] Response Time: 0.006 seconds
+[2025-07-27 23:11:19.499] Get todos total time (get_initial_todos): 0.020 seconds
+[2025-07-27 23:11:19.500]
+Step 2: Create new todo item
+[2025-07-27 23:11:19.500] Creating new todo item...
+[2025-07-27 23:11:19.500] Request payload: {
+  "title": "New learning",
+  "description": "API Automation with python"
+}
+[2025-07-27 23:11:19.514] CREATE TODO - Status Code: 201
+[2025-07-27 23:11:19.514] Response Body: {
+  "id": 12,
+  "userId": 1,
+  "title": "New learning",
+  "description": "API Automation with python",
+  "completed": false,
+  "createdAt": "2025-07-27T19:11:19.511Z"
+}
+[2025-07-27 23:11:19.514] Response Time: 0.006 seconds
+[2025-07-27 23:11:19.514] Successfully created todo with ID: 12
+[2025-07-27 23:11:19.514] Create todo total time: 0.014 seconds
+[2025-07-27 23:11:19.515]
+Step 3: Verify todo creation
+[2025-07-27 23:11:19.515] Fetching all todo items (final_check)...
+[2025-07-27 23:11:19.530] GET TODOS (final_check) - Status Code: 200
+[2025-07-27 23:11:19.534] Response Body: [
+  {
+    "id": 1,
+    "userId": 1,
+    "title": "Sample Todo",
+    "description": "This is a sample todo",
+    "completed": false,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "title": "Another Todo",
+    "description": "Another sample todo",
+    "completed": true,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T18:58:14.611Z"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:02:40.618Z"
+  },
+  {
+    "id": 7,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:03:39.612Z"
+  },
+  {
+    "id": 8,
+    "userId": 1,
+    "title": "Automated Test Todo",
+    "description": "Created by automation script",
+    "completed": false,
+    "createdAt": "2025-07-27T19:06:56.347Z"
+  },
+  {
+    "id": 9,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:07:21.727Z"
+  },
+  {
+    "id": 11,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:08:20.170Z"
+  },
+  {
+    "id": 12,
+    "userId": 1,
+    "title": "New learning",
+    "description": "API Automation with python",
+    "completed": false,
+    "createdAt": "2025-07-27T19:11:19.511Z"
+  }
+]
+[2025-07-27 23:11:19.534] Response Time: 0.007 seconds
+[2025-07-27 23:11:19.534] Get todos total time (final_check): 0.019 seconds
+[2025-07-27 23:11:19.535]
+Step 4: Update the todo
+[2025-07-27 23:11:19.535] Updating todo ID 12...
+[2025-07-27 23:11:19.535] Request payload: {
+  "title": "Updated title",
+  "description": "Updated description",
+  "completed": true
+}
+[2025-07-27 23:11:19.549] UPDATE TODO - Status Code: 200
+[2025-07-27 23:11:19.549] Response Body: {
+  "id": 12,
+  "userId": 1,
+  "title": "Updated title",
+  "description": "Updated description",
+  "completed": true,
+  "createdAt": "2025-07-27T19:11:19.511Z"
+}
+[2025-07-27 23:11:19.549] Response Time: 0.006 seconds
+[2025-07-27 23:11:19.549] Update todo total time: 0.014 seconds
+[2025-07-27 23:11:19.550]
+Step 5: Verify todo update
+[2025-07-27 23:11:19.550] Fetching all todo items (final_check)...
+[2025-07-27 23:11:19.563] GET TODOS (final_check) - Status Code: 200
+[2025-07-27 23:11:19.567] Response Body: [
+  {
+    "id": 1,
+    "userId": 1,
+    "title": "Sample Todo",
+    "description": "This is a sample todo",
+    "completed": false,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "title": "Another Todo",
+    "description": "Another sample todo",
+    "completed": true,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T18:58:14.611Z"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:02:40.618Z"
+  },
+  {
+    "id": 7,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:03:39.612Z"
+  },
+  {
+    "id": 8,
+    "userId": 1,
+    "title": "Automated Test Todo",
+    "description": "Created by automation script",
+    "completed": false,
+    "createdAt": "2025-07-27T19:06:56.347Z"
+  },
+  {
+    "id": 9,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:07:21.727Z"
+  },
+  {
+    "id": 11,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:08:20.170Z"
+  },
+  {
+    "id": 12,
+    "userId": 1,
+    "title": "Updated title",
+    "description": "Updated description",
+    "completed": true,
+    "createdAt": "2025-07-27T19:11:19.511Z"
+  }
+]
+[2025-07-27 23:11:19.567] Response Time: 0.007 seconds
+[2025-07-27 23:11:19.567] Get todos total time (final_check): 0.017 seconds
+[2025-07-27 23:11:19.568]
+Step 6: Delete the todo
+[2025-07-27 23:11:19.568] Deleting todo ID 12...
+[2025-07-27 23:11:19.585] DELETE TODO - Status Code: 200
+[2025-07-27 23:11:19.585] Response Body: {
+  "message": "Todo deleted successfully"
+}
+[2025-07-27 23:11:19.585] Response Time: 0.008 seconds
+[2025-07-27 23:11:19.585] Delete todo total time: 0.017 seconds
+[2025-07-27 23:11:19.585]
+Step 7: Verify todo deletion
+[2025-07-27 23:11:19.586] Fetching all todo items (final_check)...
+[2025-07-27 23:11:19.600] GET TODOS (final_check) - Status Code: 200
+[2025-07-27 23:11:19.603] Response Body: [
+  {
+    "id": 1,
+    "userId": 1,
+    "title": "Sample Todo",
+    "description": "This is a sample todo",
+    "completed": false,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "title": "Another Todo",
+    "description": "Another sample todo",
+    "completed": true,
+    "createdAt": "2025-07-27T18:48:15.329Z"
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T18:58:14.611Z"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:02:40.618Z"
+  },
+  {
+    "id": 7,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:03:39.612Z"
+  },
+  {
+    "id": 8,
+    "userId": 1,
+    "title": "Automated Test Todo",
+    "description": "Created by automation script",
+    "completed": false,
+    "createdAt": "2025-07-27T19:06:56.347Z"
+  },
+  {
+    "id": 9,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:07:21.727Z"
+  },
+  {
+    "id": 11,
+    "userId": 1,
+    "title": "Todo to Toggle",
+    "description": "",
+    "completed": false,
+    "createdAt": "2025-07-27T19:08:20.170Z"
+  }
+]
+[2025-07-27 23:11:19.603] Response Time: 0.006 seconds
+[2025-07-27 23:11:19.603] Get todos total time (final_check): 0.017 seconds
+[2025-07-27 23:11:19.604]
+==================================================
+[2025-07-27 23:11:19.604] TEST EXECUTION SUMMARY
+[2025-07-27 23:11:19.604] ==================================================
+[2025-07-27 23:11:19.604]
+EXECUTION OVERVIEW:
+[2025-07-27 23:11:19.604] Total Steps: 6
+[2025-07-27 23:11:19.604] Passed: 6
+[2025-07-27 23:11:19.604] Failed: 0
+[2025-07-27 23:11:19.604] Total Execution Time: 0.122 seconds
+[2025-07-27 23:11:19.604]
+DETAILED RESULTS:
+[2025-07-27 23:11:19.604]
+Login:
+[2025-07-27 23:11:19.604]   status: PASS
+[2025-07-27 23:11:19.604]   time: 0.040026187896728516
+[2025-07-27 23:11:19.604]   token: eyJhbGciOiJIUzI... (truncated)
+[2025-07-27 23:11:19.605]
+Get Initial Todos:
+[2025-07-27 23:11:19.605]   status: PASS
+[2025-07-27 23:11:19.605]   time: 0.020052433013916016
+[2025-07-27 23:11:19.605]   count: 0
+[2025-07-27 23:11:19.605]
+Create Todo:
+[2025-07-27 23:11:19.605]   status: PASS
+[2025-07-27 23:11:19.605]   time: 0.014015674591064453
+[2025-07-27 23:11:19.605]   id: 12
+[2025-07-27 23:11:19.605]
+Update Todo:
+[2025-07-27 23:11:19.605]   status: PASS
+[2025-07-27 23:11:19.605]   time: 0.014003515243530273
+[2025-07-27 23:11:19.605]
+Delete Todo:
+[2025-07-27 23:11:19.605]   status: PASS
+[2025-07-27 23:11:19.605]   time: 0.01651740074157715
+[2025-07-27 23:11:19.605]
+Final Check:
+[2025-07-27 23:11:19.605]   status: PASS
+[2025-07-27 23:11:19.605]   time: 0.01700115203857422
+[2025-07-27 23:11:19.605]   count: 0
+[2025-07-27 23:11:19.605]
+Test sequence completed
+[2025-07-27 23:11:19.605] ==================================================
+Press any key to continue . . .
